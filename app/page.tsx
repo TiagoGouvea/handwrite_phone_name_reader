@@ -42,6 +42,14 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        <footer className="text-center mt-16 py-8 border-t border-gray-200">
+          <div className="text-gray-500 text-sm space-y-1">
+            <p>🌸 Feito com amor e código 🌸</p>
+            <p>🌺 Por Tiago Gouvêa 🌺</p>
+            <p>🌼 Para feira de flores 🌼</p>
+          </div>
+        </footer>
       </div>
     </main>
   )
