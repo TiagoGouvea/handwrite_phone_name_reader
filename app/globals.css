@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 100vw !important;
+}
+
+#__next, main, div {
+  overflow-x: hidden;
+}
+
+/* Force all containers to respect viewport width */
+main, .max-w-6xl, .max-w-4xl, .max-w-md {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
