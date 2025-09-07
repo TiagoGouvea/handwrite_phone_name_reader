@@ -41,11 +41,20 @@ export default function ContactResults({ contacts, onClear }: ContactResultsProp
       ...contacts.map(contact => `"${contact.name}","${addPhonePrefix(contact.phone)}","${contact.source}"`)
     ].join('\n')
 
+    // Generate filename with current date and time
+    const now = new Date()
+    const day = now.getDate()
+    const month = now.toLocaleDateString('pt-BR', { month: 'short' }).toLowerCase()
+    const year = now.getFullYear()
+    const hours = now.getHours().toString().padStart(2, '0')
+    const minutes = now.getMinutes().toString().padStart(2, '0')
+    const filename = `contatos_feira_${day}-${month}-${year}_${hours}-${minutes}.csv`
+
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
     const link = document.createElement('a')
     const url = URL.createObjectURL(blob)
     link.setAttribute('href', url)
-    link.setAttribute('download', 'contatos_feira.csv')
+    link.setAttribute('download', filename)
     link.style.visibility = 'hidden'
     document.body.appendChild(link)
     link.click()
